@@ -1,0 +1,33 @@
+extends ../layout.pug
+
+block content 
+    form(method="POST", action="/clientes/update")
+        .mb-3
+            label.form-label Nombre 
+            input.form-control(type="text", name="nombre", value=cliente.nombre)
+        .mb-3
+            label.form-label Apellidos 
+            input.form-control(type="text", name="apellidos", value=cliente.apellidos)
+        .mb-3
+            label.form-label Dirección 
+            input.form-control(type="text", name="direccion", value=cliente.direccion)
+        .mb-3
+            label.form-label Email 
+            input.form-control(type="text", name="email", value=cliente.email)
+        .mb-3
+            label.form-label Edad 
+            input.form-control(type="text", name="edad", value=cliente.edad)
+        .mb-3
+            label.form-label Género 
+            input.form-control(type="text", name="genero", value=cliente.genero)
+        .mb-3
+            label.form-label Cuota 
+            input.form-control(type="text", name="cuota", value=cliente.cuota)
+        .mb-3
+            label.form-label DNI 
+            input.form-control(type="text", name="dni", value=cliente.dni)
+        .mb-3
+            label.form-label Fecha Nacimiento 
+            input.form-control(type="date", name="fecha_nacimiento", value=cliente.fecha_nacimiento)
+        input(type="hidden", name="id", value=cliente.id)
+        input(type="submit", value="Enviar")

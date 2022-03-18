@@ -1,0 +1,34 @@
+extends ../layout.pug
+
+block content
+    h2 Listado de clientes
+    //- Comentario
+    table.table
+        thead 
+            tr 
+                th Nombre
+                th Apellidos 
+                th Dirección 
+                th Email 
+                th Edad 
+                th Género 
+                th Cuota
+                th DNI
+                th Acciones
+        tbody
+            each cliente in clientes
+                tr 
+                    td= cliente.nombre 
+                    td= cliente.apellidos 
+                    td= cliente.direccion 
+                    td= cliente.email 
+                    td= cliente.edad 
+                    td= cliente.genero 
+                    td= cliente.cuota 
+                    td= cliente.dni
+                    td
+                        a.btn.btn-info.btn-sm.me-1(href="/clientes/edit/"+cliente.id) Editar
+                        a.btn.btn-danger.btn-sm(
+                            href="/clientes/delete/"+cliente.id,
+                            onclick="return confirm('¿Estás seguro?')"
+                        ) Borrar

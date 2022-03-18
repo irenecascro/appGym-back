@@ -1,0 +1,119 @@
+GET http://localhost:3000/clientes
+
+###
+GET http://localhost:3000/clientes/new
+
+###
+GET http://localhost:3000/clientes/edit/899
+
+###
+GET http://localhost:3000/clientes/delete/899
+
+###
+POST http://localhost:3000/clientes/create
+
+###
+POST http://localhost:3000/clientes/update
+
+### API URLs
+###
+GET http://localhost:3000/api/clientes?page=1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoiMjAiLCJuYW1lIjoiSm9obiBEb2UiLCJpYXQiOjE1MTYyMzkwMjJ9.NyjdxD0c9b_Madh_qJFrAmpBBjFv9YMsMD4putkNQxQ
+
+###
+GET http://localhost:3000/api/clientes/85
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoiMjAiLCJuYW1lIjoiSm9obiBEb2UiLCJpYXQiOjE1MTYyMzkwMjJ9.NyjdxD0c9b_Madh_qJFrAmpBBjFv9YMsMD4putkNQxQ
+
+###
+GET http://localhost:3000/api/clientes/mayores/74
+
+###
+POST http://localhost:3000/api/clientes
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoiMjAiLCJuYW1lIjoiSm9obiBEb2UiLCJpYXQiOjE1MTYyMzkwMjJ9.NyjdxD0c9b_Madh_qJFrAmpBBjFv9YMsMD4putkNQxQ
+
+{
+  "nombre": "Ramiro",
+  "apellidos": "Romero",
+  "direccion": "41 Gran Via",
+  "email": "ramiroromero1@jiathis.com",
+  "edad": 23,
+  "genero": "M",
+  "cuota": "19.90",
+  "fecha_nacimiento": "1998-09-15",
+  "dni": "89187627L"
+}
+
+###
+PUT http://localhost:3000/api/clientes/85
+Content-Type: application/json
+
+{
+  "nombre": "Angelines",
+  "apellidos": "Vautre",
+  "direccion": "41 Kipling Court",
+  "email": "lvautre2c@jiathis.com",
+  "edad": 26,
+  "genero": "F",
+  "cuota": "39.90",
+  "dni": "216724920j"
+}
+
+###
+DELETE http://localhost:3000/api/clientes/14
+
+### PROFESORES
+GET http://localhost:3000/api/profesores
+
+###
+POST http://localhost:3000/api/profesores
+Content-Type: application/json
+
+{
+  "nombre": "Mr Miyagui",
+  "experiencia": 25
+}
+
+###
+PUT http://localhost:3000/api/profesores/107
+Content-Type: application/json
+
+{
+  "nombre": "Mr Miyagui",
+  "experiencia": 30
+}
+
+###
+DELETE http://localhost:3000/api/profesores/107
+
+###
+GET http://localhost:3000/api/profesores/91
+
+### REGISTRO - LOGIN
+###
+POST http://localhost:3000/api/usuarios/registro
+Content-Type: application/json
+
+{
+  "username": "Belen",
+  "nombre": "Belen",
+  "email": "belen@gmail.com",
+  "password": "mariO12345!"
+}
+
+###
+POST http://localhost:3000/api/usuarios/login
+Content-Type: application/json
+
+{
+  "email": "belen@gmail.com",
+  "password": "mariO12345!"
+}
+
+###
+GET http://localhost:3000/api/clientes/me
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoyMCwiZmVjaGFfZXhwaXJhY2lvbiI6MTY0MDI3MzA5NywiaWF0IjoxNjM5NjY4Mjk3fQ.Ui1Wlrp8TvwlsQSm8R-viK_dGeo2Yt6uTJzlJGSKjHw
+
+###
+GET http://localhost:3000/api/usuarios/perfil
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoxOCwiZmVjaGFfZXhwaXJhY2lvbiI6MTY0MDI3NDU2MywiaWF0IjoxNjM5NjY5NzYzfQ.XbPUaRTE9ZleD62bL6xAl7AGMIMEINMZyCSMMLiMlB8

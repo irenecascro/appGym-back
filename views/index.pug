@@ -1,0 +1,60 @@
+mixin lista(arr, msg)
+  ul
+    each item in arr 
+      li= item
+    else 
+      li= msg
+  
+mixin articulo(titulo)
+  h1= titulo
+  if block
+    block
+  else
+    p El articulo no tiene contenido
+
+
+h1 Cabecera de la página
+h2 Subtítulo
+p.temperatura Cargando temperatura...
+div 
+  p Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, voluptatem.
+  a(href="http://google.es", target="_blank") Enlace
+  ul
+    li Uno
+    li Dos
+    li Tres
+    li Cuatro
+    li Cinco
+div 
+  p(class="parrafo rojo", id="main") Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, debitis.
+  p#main.parrafo.rojo Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis, magni!
+  p(style={color: 'indigo', 'background-color': 'dodgerblue'}) Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, quas.
+div 
+  p= nombre
+  p Mi nombre es #{nombre}
+div
+  ul
+    - for(let i = 0; i<animales.length; i++)
+      li= animales[i]
+.iterador
+  ul
+    each animal in animales
+      li= animal
+    else 
+      li No hay animales
+.mixin
+  - animales = []
+  +lista(animales, "No hay animales")
+  +lista([], "Array vacio")
+  +lista([1,3,4,5,7,12,5435,11], "Sin números")
+
+  +articulo('Título del artículo 1')
+    p Contenido del artículo
+script.
+  fetch('http://api.openweathermap.org/data/2.5/weather?q=Madrid,es&appid=49db267b8509f095b2d836d7f44d00c5&units=metric')
+    .then(response => response.json())
+    .then(json => {
+      console.log(json.main.temp)
+      const parrafoTemp = document.querySelector('.temperatura');
+      parrafoTemp.innerText = `TEMP: ${json.main.temp}ºC`;
+    })
